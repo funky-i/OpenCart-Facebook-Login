@@ -1,6 +1,10 @@
 config.php
-admin/config.php
+index.php
+php.ini
 
+admin/config.php
+admin/php.ini
+admin/index.php
 
 admin/controller/catalog
 admin/controller/common
@@ -119,8 +123,7 @@ catalog/view/theme/default/template/product
 
 
 download
-image/cache/*.jpg
-image/cache/data/*
+image/cache
 image/data
 image/flags
 image/no_image.jpg
