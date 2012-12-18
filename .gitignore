@@ -128,4 +128,10 @@ image/templates
 
 
 system/cache
+system/config
+system/database
+system/engine
+system/helper
+system/library
 system/logs
+system/startup.php
