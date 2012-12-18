@@ -1,6 +1,7 @@
 config.php
 admin/config.php
 
+
 admin/controller/catalog
 admin/controller/common
 admin/controller/design
@@ -64,6 +65,7 @@ admin/view/template/tool
 admin/view/template/total
 admin/view/template/user
 
+
 catalog/controller/account
 catalog/controller/affiliate
 catalog/controller/checkout
@@ -113,11 +115,17 @@ catalog/view/theme/default/template/payment
 catalog/view/theme/default/template/product
 
 
-
 !index.html
+
 
 download
 image/cache/*.jpg
 image/cache/data/*
+image/data
+image/flags
+image/no_image.jpg
+image/templates
+
+
 system/cache
 system/logs
