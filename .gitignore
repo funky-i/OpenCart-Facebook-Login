@@ -6,6 +6,7 @@ admin/config.php
 admin/php.ini
 admin/index.php
 
+
 admin/controller/catalog
 admin/controller/common
 admin/controller/design
@@ -13,7 +14,24 @@ admin/controller/error
 admin/controller/extension
 admin/controller/feed
 admin/controller/localisation
-admin/controller/module
+
+
+admin/controller/module/account.php
+admin/controller/module/affiliate.php
+admin/controller/module/banner.php
+admin/controller/module/bestseller.php
+admin/controller/module/carousel.php
+admin/controller/module/category.php
+admin/controller/module/featured.php
+admin/controller/module/google_talk.php
+admin/controller/module/information.php
+admin/controller/module/latest.php
+admin/controller/module/slideshow.php
+admin/controller/module/special.php
+admin/controller/module/store.php
+admin/controller/module/welcome.php
+
+
 admin/controller/payment
 admin/controller/report
 admin/controller/sale
