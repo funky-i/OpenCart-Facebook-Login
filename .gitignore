@@ -15,22 +15,9 @@ admin/controller/extension
 admin/controller/feed
 admin/controller/localisation
 
-
-admin/controller/module/account.php
-admin/controller/module/affiliate.php
-admin/controller/module/banner.php
-admin/controller/module/bestseller.php
-admin/controller/module/carousel.php
-admin/controller/module/category.php
-admin/controller/module/featured.php
-admin/controller/module/google_talk.php
-admin/controller/module/information.php
-admin/controller/module/latest.php
-admin/controller/module/slideshow.php
-admin/controller/module/special.php
-admin/controller/module/store.php
-admin/controller/module/welcome.php
-
+#Module
+admin/controller/module/*
+!admin/controller/module/facebook.php
 
 admin/controller/payment
 admin/controller/report
@@ -40,6 +27,7 @@ admin/controller/shipping
 admin/controller/tool
 admin/controller/total
 admin/controller/user
+
 admin/model/catalog
 admin/model/design
 admin/model/localisation
@@ -48,6 +36,8 @@ admin/model/sale
 admin/model/setting
 admin/model/tool
 admin/model/user
+
+
 admin/language/english/catalog
 admin/language/english/common
 admin/language/english/design
@@ -57,7 +47,11 @@ admin/language/english/extension
 admin/language/english/feed
 admin/language/english/localisation
 admin/language/english/mail
-admin/language/english/module
+
+#Module
+admin/language/english/module/*
+!admin/language/english/module/facebook.php
+
 admin/language/english/payment
 admin/language/english/report
 admin/language/english/sale
@@ -66,6 +60,8 @@ admin/language/english/shipping
 admin/language/english/tool
 admin/language/english/total
 admin/language/english/user
+
+
 admin/view/image
 admin/view/javascript
 admin/view/stylesheet
@@ -77,7 +73,11 @@ admin/view/template/extension
 admin/view/template/feed
 admin/view/template/localisation
 admin/view/template/mail
-admin/view/template/module
+
+#Module
+admin/view/template/module/*
+!admin/view/template/module/facebook.tpl
+
 admin/view/template/payment
 admin/view/template/report
 admin/view/template/sale
