@@ -51,7 +51,7 @@ class ControllerModuleFacebook extends Controller {
 		$this->data['entry_creator'] = $this->language->get('entry_creator');
 		$this->data['entry_version'] = $this->language->get('entry_version');
 		$this->data['entry_updated'] = $this->language->get('entry_updated');
-		$this->data['entry_licence'] = $this->language->get('entry_licence');
+		$this->data['entry_contact'] = $this->language->get('entry_contact');
 
 		$this->data['entry_apikey'] = $this->language->get('entry_apikey');
 		$this->data['entry_apisecret'] = $this->language->get('entry_apisecret');

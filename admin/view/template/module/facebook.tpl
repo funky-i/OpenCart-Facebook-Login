@@ -14,14 +14,7 @@
     <div class="buttons"><a onclick="$('#form').submit();" class="button"><span><?php echo $button_save; ?></span></a><a onclick="location = '<?php echo $cancel; ?>';" class="button"><span><?php echo $button_cancel; ?></span></a></div>
   </div>
   <div class="content">
-      <table id="module" class="list">
-          <tr>
-            <td class="left"><?php echo $entry_creator; ?></td>
-            <td class="left"><?php echo $entry_version; ?></td>
-            <td class="left"><?php echo $entry_updated; ?></td>
-            <td class="left"><?php echo $entry_licence; ?></td>
-          </tr>
-      </table>
+      
     <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
       <table class="form">
 	<?php if ($error_code) { ?>
@@ -120,6 +113,8 @@
           </tr>
         </tfoot>
       </table>
+
+      <span class="left help"><?php echo $entry_creator; ?> | <?php echo $entry_version; ?> | <?php echo $entry_contact; ?> </span>
     </form>
   </div>
 </div>
