@@ -6,7 +6,7 @@ admin/config.php
 admin/php.ini
 admin/index.php
 
-
+#Admin -> Controller
 admin/controller/catalog
 admin/controller/common
 admin/controller/design
@@ -28,6 +28,7 @@ admin/controller/tool
 admin/controller/total
 admin/controller/user
 
+#Model Folder
 admin/model/catalog
 admin/model/design
 admin/model/localisation
@@ -37,7 +38,7 @@ admin/model/setting
 admin/model/tool
 admin/model/user
 
-
+#Admin -> Language
 admin/language/english/catalog
 admin/language/english/common
 admin/language/english/design
@@ -61,7 +62,7 @@ admin/language/english/tool
 admin/language/english/total
 admin/language/english/user
 
-
+#Admin -> View
 admin/view/image
 admin/view/javascript
 admin/view/stylesheet
@@ -88,6 +89,7 @@ admin/view/template/total
 admin/view/template/user
 
 
+#Catalog -> Controller
 catalog/controller/account
 catalog/controller/affiliate
 catalog/controller/checkout
@@ -98,6 +100,8 @@ catalog/controller/information
 catalog/controller/module
 catalog/controller/payment
 catalog/controller/product
+
+#Catalog -> Language
 catalog/language/english/account
 catalog/language/english/affiliate
 catalog/language/english/checkout
@@ -111,6 +115,8 @@ catalog/language/english/payment
 catalog/language/english/product
 catalog/language/english/shipping
 catalog/language/english/total
+
+#Catalog -> Model
 catalog/model/account
 catalog/model/affiliate
 catalog/model/catalog
@@ -122,6 +128,8 @@ catalog/model/setting
 catalog/model/shipping
 catalog/model/tool
 catalog/model/total
+
+#Catalog -> View
 catalog/view/javascript
 catalog/view/theme/default/image
 catalog/view/theme/default/stylesheet
@@ -147,7 +155,7 @@ image/flags
 image/no_image.jpg
 image/templates
 
-
+#System
 system/cache
 system/config
 system/database
