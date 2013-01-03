@@ -18,7 +18,7 @@ $_['entry_contact']      	= 'Contact: <a href="http://opencart.checkyoursites.co
 $_['entry_apikey']        	= 'Facebook API Key:';
 $_['entry_apisecret']     	= 'Facebook API Secret:';
 $_['entry_pwdsecret']     	= 'Password Encryption Key:';
-$_['entry_pwdsecret_desc']	= 'To make the customer password more safe, 4 to 8 characters (eg. w7x4 ).';
+$_['entry_pwdsecret_desc']	= 'To make the customer password more safe, 4 to 8 characters (eg. a2k13 ).';
 $_['entry_button']	  		= 'Connect Button:';
 $_['entry_button_desc']	  	= 'Can be text or html code.';
 $_['entry_layout']        	= 'Layout:';
