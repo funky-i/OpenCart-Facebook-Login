@@ -1,5 +1,5 @@
 <?php
 // Heading 
-$_['heading_title'] = 'Facebook  Login & Register';
+$_['heading_title'] = 'Facebook Login & Register';
 
 ?>

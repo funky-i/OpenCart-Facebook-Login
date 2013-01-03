@@ -18,7 +18,7 @@ class ControllerModuleFacebook extends Controller {
 				if(isset($this->request->post['facebook_module'])){
 					foreach($this->request->post['facebook_module'] as $k=>$v){
 						foreach($v as $key=>$value){
-							$this->request->post['fbconnect_'.$k.'_'.$key]=$value;
+							$this->request->post['facebook_'.$k.'_'.$key]=$value;
 						}
 						$module[]=$i;
 						$i++;
@@ -29,9 +29,13 @@ class ControllerModuleFacebook extends Controller {
 		}
 				
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-			$this->model_setting_setting->editSetting('facebook', $this->request->post);					
+
+			$this->model_setting_setting->editSetting('facebook', $this->request->post);
+
 			$this->session->data['success'] = $this->language->get('text_success');						
+
 			$this->redirect($this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL'));
+
 		}
 
 		$this->load->model('localisation/language');
@@ -109,34 +113,35 @@ class ControllerModuleFacebook extends Controller {
 		$this->data['modules'] = array();
 
 		foreach ($languages as $language) {
-			if (isset($this->request->post['fbconnect_button_' . $language['language_id']])) {
-				$this->data['fbconnect_button_' . $language['language_id']] = $this->request->post['fbconnect_button_' . $language['language_id']];
+			if (isset($this->request->post['facebook_button_' . $language['language_id']])) {
+				$this->data['facebook_button_' . $language['language_id']] = $this->request->post['facebook_button_' . $language['language_id']];
 			} else {
-				$this->data['fbconnect_button_' . $language['language_id']] = $this->config->get('fbconnect_button_' . $language['language_id']);
+				$this->data['facebook_button_' . $language['language_id']] = $this->config->get('facebook_button_' . $language['language_id']);
 			}
 		}
 
-		if (isset($this->request->post['fbconnect_apikey'])) {
-			$this->data['fbconnect_apikey'] = $this->request->post['fbconnect_apikey'];
-		} elseif ($this->config->get('fbconnect_apikey')) { 
-			$this->data['fbconnect_apikey'] = $this->config->get('fbconnect_apikey');
-		} else $this->data['fbconnect_apikey'] = '';
+		if (isset($this->request->post['facebook_apikey'])) {
+			$this->data['facebook_apikey'] = $this->request->post['facebook_apikey'];
+		} elseif ($this->config->get('facebook_apikey')) { 
+			$this->data['facebook_apikey'] = $this->config->get('facebook_apikey');
+		} else $this->data['facebook_apikey'] = '';
 
-		if (isset($this->request->post['fbconnect_apisecret'])) {
-			$this->data['fbconnect_apisecret'] = $this->request->post['fbconnect_apisecret'];
-		} elseif ($this->config->get('fbconnect_apisecret')) { 
-			$this->data['fbconnect_apisecret'] = $this->config->get('fbconnect_apisecret');
-		} else $this->data['fbconnect_apisecret'] = '';
+		if (isset($this->request->post['facebook_apisecret'])) {
+			$this->data['facebook_apisecret'] = $this->request->post['facebook_apisecret'];
+		} elseif ($this->config->get('facebook_apisecret')) { 
+			$this->data['facebook_apisecret'] = $this->config->get('facebook_apisecret');
+		} else $this->data['facebook_apisecret'] = '';
 
-		if (isset($this->request->post['fbconnect_pwdsecret'])) {
-			$this->data['fbconnect_pwdsecret'] = $this->request->post['fbconnect_pwdsecret'];
-		} elseif ($this->config->get('fbconnect_pwdsecret')) { 
-			$this->data['fbconnect_pwdsecret'] = $this->config->get('fbconnect_pwdsecret');
-		} else $this->data['fbconnect_pwdsecret'] = '';
+		if (isset($this->request->post['facebook_pwdsecret'])) {
+			$this->data['facebook_pwdsecret'] = $this->request->post['facebook_pwdsecret'];
+		} elseif ($this->config->get('facebook_pwdsecret')) { 
+			$this->data['facebook_pwdsecret'] = $this->config->get('facebook_pwdsecret');
+		} else $this->data['facebook_pwdsecret'] = '';
 
 		if($opencartversion<1.51){
 			$this->data['modules']=array();
 			$toarray=$obj_get='';
+
 			if(isset($this->request->post['facebook_module'])){
 				$toarray=$this->request->post['facebook_module'];
 				$obj_get='post';
@@ -145,6 +150,7 @@ class ControllerModuleFacebook extends Controller {
 				$toarray=$this->config->get('facebook_module');
 				$obj_get='config';
 			}
+
 			if($toarray!=',' && $obj_get!=''){
 				$i=count(explode(',',$toarray));
 				$array_key=array('layout_id','position','status','sort_order');
@@ -152,20 +158,22 @@ class ControllerModuleFacebook extends Controller {
 					$array=array();
 					foreach($array_key as $key){
 						if($obj_get=="config")
-							$array[$key]=$this->config->get('fbconnect_'.$k.'_'.$key);
+							$array[$key]=$this->config->get('facebook_'.$k.'_'.$key);
 						else
-							$array[$key]=$this->request->post['fbconnect_'.$k.'_'.$key];
+							$array[$key]=$this->request->post['facebook_'.$k.'_'.$key];
 					}
 					$this->data['modules'][] = $array;
 				}
 			}
 		}
-		else{		
+		else{	
+
 			if (isset($this->request->post['facebook_module'])) {
 				$this->data['modules'] = $this->request->post['facebook_module'];
 			} elseif ($this->config->get('facebook_module')) { 
 				$this->data['modules'] = $this->config->get('facebook_module');
-			}		
+			}
+
 		}
 
 		$this->load->model('design/layout');
@@ -182,11 +190,12 @@ class ControllerModuleFacebook extends Controller {
 	}
 	
 	private function validate() {
+
 		if (!$this->user->hasPermission('modify', 'module/facebook')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 		
-		if (!$this->request->post['fbconnect_apikey'] || !$this->request->post['fbconnect_apisecret'] || !$this->request->post['fbconnect_pwdsecret']) {
+		if (!$this->request->post['facebook_apikey'] || !$this->request->post['facebook_apisecret'] || !$this->request->post['facebook_pwdsecret']) {
 			$this->error['code'] = $this->language->get('error_code');
 		}
 		
@@ -195,6 +204,7 @@ class ControllerModuleFacebook extends Controller {
 		} else {
 			return false;
 		}	
+
 	}
 }
 ?>
