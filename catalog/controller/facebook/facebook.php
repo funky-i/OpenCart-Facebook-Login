@@ -24,6 +24,7 @@ class ControllerFacebookFacebook extends Controller {
 
 		$fbuser = $this->fbconnect->getUser();
 		$fbuser_profile = null;
+		
 		if ($fbuser){
 			try {
 				$fbuser_profile = $this->fbconnect->api("/$fbuser");
