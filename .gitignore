@@ -97,7 +97,7 @@ catalog/controller/common
 catalog/controller/error
 catalog/controller/feed
 catalog/controller/information
-catalog/controller/module
+catalog/controller/module/*
 !catalog/controller/module/facebook.php
 
 catalog/controller/payment
@@ -142,7 +142,7 @@ catalog/view/theme/default/template/common
 catalog/view/theme/default/template/error
 catalog/view/theme/default/template/information
 catalog/view/theme/default/template/mail
-catalog/view/theme/default/template/module
+catalog/view/theme/default/template/module/*
 !catalog/view/theme/default/template/module/facebook.tpl
 
 catalog/view/theme/default/template/payment
