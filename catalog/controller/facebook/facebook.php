@@ -37,7 +37,7 @@ class ControllerFacebookFacebook extends Controller {
 		$_SERVER = $_SERVER_CLEANED;
 	
 
-		if($fbuser_profile['id'] && $fbuser_profile['email'] && $fbuser_profile['verified']){
+		if($fbuser_profile['id'] && $fbuser_profile['email'] && isset($fbuser_profile['verified']){
 			$this->load->model('account/customer');
 
 			$email = $fbuser_profile['email'];
